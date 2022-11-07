@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color:white">
+
+    <a-camera position="10 20 250"></a-camera>
+
+    <!-------------------------------------------Asset Management------------------------------------------->
+    <a-assets timeout="10000">
+
+      <a-asset-item id="man" src="./models/nathan_animated_003_-_walking_3d_man/scene.gltf"></a-asset-item>
+      <a-asset-item id="bench" src="./models/bench/scene.gltf"></a-asset-item>
+      <a-asset-item id="road" src="./models/american_road/scene.gltf"></a-asset-item>
+      <a-asset-item id="light" src="./models/street_light/scene.gltf"></a-asset-item>
+      <a-asset-item id="tree" src="./models/tree_for_games/scene.gltf"></a-asset-item>
+      <a-asset-item id="bush" src="./models/bush/scene.gltf"></a-asset-item>
+      <img id="bg" src="./images/night-sky.jpg">
+      
+    </a-assets>
+
+    <a-sky src="#bg"></a-sky>
+
+    <!-------------------------------------Lights in the scene----------------------------------------------->
+
+    <!--Ambient-->
+    <!--Add Code here-->
+    <a-entity light="type:ambient; intensity:0.5;"></a-entity>
+
+    <!--Directional-->
+    <!--Add Code here-->
+    <a-entity light="type:directional; intensity:1; cast-shadow:true;distance:50;decay:2;color:yellow"
+      position="-100 18 20"></a-entity>
+    <!-------------------------------------Circular Plane----------------------------------------------->
+
+    <!--------------------------------------GLTF Models----------------------------------------------------------->
+
+    <!--Tiger-->
+    <a-entity>
+        <a-entity position="4 -180 10" rotation="0 110 0" scale="1 1 1" gltf-model="#road" shadow="cast: true"></a-entity>
+      </a-entity>
+      <a-entity>
+        <a-entity position="4 -70 0" rotation="0 55 0" scale="0.8 0.8 0.8" gltf-model="#man" shadow="cast: true;receive:true">
+        </a-entity>
+      </a-entity>
+    
+      
+        <a-entity position="-300 -60 -200" rotation="0 0 0" scale="0.8 0.8 0.8" gltf-model="#light" shadow="cast: true;receive:true">
+        </a-entity>
+      </a-entity>
+      <a-entity>
+        <a-entity position="4 -70 -310" rotation="0 110 0" scale="0.4 0.4 0.4" gltf-model="#tree" shadow="cast: true"></a-entity>
+      </a-entity>
+      <a-entity>
+        <a-entity position="-300 -70 -380" rotation="0 110 0" scale="0.3 0.3 0.3" gltf-model="#tree" shadow="cast: true"></a-entity>
+      </a-entity>
+      <a-entity>
+        <a-entity position="-100 -70 -300"  scale="0.8 0.8 0.8" gltf-model="#bush" shadow="cast: true"></a-entity>
+      </a-entity>
+      <a-entity>
+        <a-entity position="-400 -70 -240"  scale="0.8 0.8 0.8" gltf-model="#bush" shadow="cast: true"></a-entity>
+      </a-entity>
+      <a-entity>
+        <a-entity position="200 -70 -240"  scale="0.8 0.8 0.8" gltf-model="#bush" shadow="cast: true"></a-entity>
+      </a-entity>
+      <a-entity>
+        <a-entity position="200 -70 -240"  scale="0.8 0.8 0.8" gltf-model="#bench" shadow="cast: true"></a-entity>
+      </a-entity>
+    <!--Add Code here-->
+
+    <!--------------------------------------END----------------------------------------------------------->
+  </a-scene>
+</body>
+
+</html>
